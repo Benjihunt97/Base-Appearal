@@ -100,7 +100,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: -30px;
+    right: 70px;
 }
 
 input[type="email"],
