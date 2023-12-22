@@ -1,0 +1,161 @@
+/* prefix styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+:root {
+    --clr-primary: hsl(0, 36%, 70%);
+    --clr-secondary: hsl(0, 93%, 68%);
+    --clr-accent: hsl(0, 6%, 24%);
+
+    --clr-hero-bg: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --clr-btn: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+img,
+button {
+    display: block;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    font-family: Josefin Sans;
+    background-image: url('https://raw.githubusercontent.com/Benjihunt97/Base-Appearal/1b6771226e6d64d26bf27492c9b1129585bd6670/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* main container */
+.container {
+    background: white;
+}
+
+/* logo */
+.logo {
+    padding: 30px;
+}
+
+/* main hero */
+.hero {
+    text-align: center;
+
+    padding: 30px;
+
+    background: var(--clr-hero-bg);
+}
+
+.title,
+.title span {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.title {
+    font-weight: 900;
+    width: 10ch;
+    margin-inline: auto;
+    letter-spacing: 15px;
+}
+
+.title span {
+    color: var(--clr-secondary);
+}
+
+/* info */
+.info {
+    width: 35ch;
+    margin-block: 20px;
+    margin-inline: auto;
+
+    color: var(--clr-primary);
+}
+
+/* email and button */
+.input-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    width: 80%;
+    height: 40px;
+
+    margin-inline: auto;
+    margin-block: 20px;
+
+
+    border: 1px solid var(--clr-primary);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.error {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -30px;
+}
+
+input[type="email"],
+button {
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+
+input[type="email"] {
+    margin-left: 10px;
+    color: var(--clr-primary);
+}
+
+button {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: 40px;
+    width: 60px;
+
+    box-shadow: 0 0 5px -1px var(--clr-primary);
+
+    border-radius: 50px;
+    color: white;
+    background: var(--clr-btn);
+}
+
+/* screen size for desktop */
+@media (min-width: 820px) {
+    body {
+        display: grid;
+        place-items: center;
+        min-height: 100dvh;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "logo hero-img"
+            "hero hero-img";
+
+        width: 800px;
+    }
+    
+    .logo {
+        grid-area: logo;
+    }
+    
+    .hero {
+        grid-area: hero;
+    }
+    
+    .image-hero {
+        grid-area: hero-img;
+    }
+}
