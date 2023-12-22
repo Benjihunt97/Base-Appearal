@@ -154,6 +154,11 @@ button {
     .hero {
         grid-area: hero;
     }
+
+    .title,
+    .title span {
+        font-size: 2.5rem;
+    }
     
     .image-hero {
         grid-area: hero-img;
